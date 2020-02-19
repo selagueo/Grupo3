@@ -26,6 +26,7 @@ public class User {
     private long phone;
     private Description description;
     
+    //Testing commit
     
     @ManyToOne
     private Zone zone;
