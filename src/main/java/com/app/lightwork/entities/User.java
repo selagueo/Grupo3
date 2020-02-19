@@ -22,7 +22,6 @@ public class User {
     private String lastName;
     private String mail;
     private String password;
-    private Date date;
     private Gender gender;
     private long phone;
     private Description description;
@@ -43,6 +42,9 @@ public class User {
     
     @OneToOne
     private ReputationTwo reputationTwo;
+    
+    @Temporal(TemporalType.DATE)
+    private Date date;
     
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date registration;
