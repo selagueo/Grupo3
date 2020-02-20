@@ -1,0 +1,5 @@
+Para subir el proyecto a git:
+git status (Aca aparecen los cambios)
+git add . (Se prepara)
+git commit -m "COMENTARIO"
+git push
