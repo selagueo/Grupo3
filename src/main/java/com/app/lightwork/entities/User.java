@@ -25,9 +25,7 @@ public class User {
     private Gender gender;
     private long phone;
     private Description description;
-    
-    //Testing commit
-    
+        
     @ManyToOne
     private Zone zone;
     
@@ -38,11 +36,8 @@ public class User {
     @OneToOne
     private Photo photo;
     
-    @OneToOne
-    private ReputationOne reputationOne;
-    
-    @OneToOne
-    private ReputationTwo reputationTwo;
+    @ManyToOne
+    private Valoration valoration;
     
     @Temporal(TemporalType.DATE)
     private Date date;
@@ -210,30 +205,6 @@ public class User {
     /**
      * @return the reputationOne
      */
-    public ReputationOne getReputationOne() {
-        return reputationOne;
-    }
-
-    /**
-     * @param reputationOne the reputationOne to set
-     */
-    public void setReputationOne(ReputationOne reputationOne) {
-        this.reputationOne = reputationOne;
-    }
-
-    /**
-     * @return the reputationTwo
-     */
-    public ReputationTwo getReputationTwo() {
-        return reputationTwo;
-    }
-
-    /**
-     * @param reputationTwo the reputationTwo to set
-     */
-    public void setReputationTwo(ReputationTwo reputationTwo) {
-        this.reputationTwo = reputationTwo;
-    }
 
     /**
      * @return the registration
@@ -262,5 +233,20 @@ public class User {
     public void setUnRegistration(java.util.Date unRegistration) {
         this.unRegistration = unRegistration;
     }
+
+    /**
+     * @return the valoration
+     */
+    public Valoration getValoration() {
+        return valoration;
+    }
+
+    /**
+     * @param valoration the valoration to set
+     */
+    public void setValoration(Valoration valoration) {
+        this.valoration = valoration;
+    }
+    
     
 }
