@@ -1,5 +1,5 @@
 package com.app.lightwork.enumerations;
 
-public class WorkStatus {
-
+public enum WorkStatus {
+    Abierto, Cerrado, Finalizado, Cancelado;
 }

@@ -2,16 +2,21 @@ package com.app.lightwork.entities;
 
 import com.app.lightwork.enumerations.Gender;
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
 
+@Entity
 public class User {
-//Id Identifier:
+    //Id Identifier:
     @Id
     //Generating an UNIQUE ID for each object:
     @GeneratedValue(generator = "uuid")
@@ -22,32 +27,35 @@ public class User {
     private String lastName;
     private String mail;
     private String password;
+    
+    @Enumerated(EnumType.STRING)
     private Gender gender;
+    
     private long phone;
     private Description description;
         
     @ManyToOne
     private Zone zone;
     
-    /*
-     	Saying ONE TO ONE on our photo attribute, will means that every user will only have
-     ONE picture.
-     */
     @OneToOne
     private Photo photo;
     
-    @ManyToOne
+    @OneToMany
     private Valoration valoration;
     
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date birthDate;
     
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date registration;
     
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date unRegistration;
-
+    
+    public User(){
+        
+    }
+    
     /**
      * @return the id
      */
@@ -118,33 +126,22 @@ public class User {
         this.password = password;
     }
 
-    /**
-     * @return the date
-     */
-    public Date getDate() {
-        return date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    /**
-     * @param date the date to set
-     */
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    /**
-     * @return the gender
-     */
     public Gender getGender() {
         return gender;
     }
 
-    /**
-     * @param gender the gender to set
-     */
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
 
     /**
      * @return the phone

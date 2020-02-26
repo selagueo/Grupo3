@@ -1,5 +1,5 @@
 package com.app.lightwork.enumerations;
 
-public class Gender {
-
+public enum Gender {
+    MALE, FEMALE;
 }

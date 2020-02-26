@@ -1,5 +1,5 @@
 package com.app.lightwork.enumerations;
 
-public class ValorationType {
-
+public enum ValorationType {
+    EMPLOYEE, BOSS;
 }
